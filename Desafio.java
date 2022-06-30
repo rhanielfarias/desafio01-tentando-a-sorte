@@ -3,83 +3,84 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
-    public class DesafioSorte {
+public class Desafio {
     public static void main(String[] args) {
-int soma = 0;
-int rangeMinimo = 1;
-int rangeMaximo = 0;
-//Declarando variáveis globais
+        int soma = 0;
+        int rangeMinimo = 1;
+        int rangeMaximo = 0;
+//Declarando variï¿½veis globais
 
-    List <Integer> errou = new ArrayList();
-    List <Integer> acertou = new ArrayList();
-    Scanner input = new Scanner(System.in);
-    Random random = new Random();
+        List <Integer> errou = new ArrayList();
+        List <Integer> acertou = new ArrayList();
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
 //Criando objetos que o jogo vai utilizar
 
-    for (;;) {
-//Laço para rodar o nível de dificuldade
+        for (;;) {
+//Laï¿½o para rodar o nï¿½vel de dificuldade
 
-System.out.println("*** Bem-vindo ao jogo da sorte. ***");
-System.out.println("Qual nível de dificuldade deseja jogar");
-System.out.println("1 - Fácil - entre 1 a 30");
-System.out.println("2 - Intermediï¿½rio - entre 1 a 60");
-System.out.println("3 - Difï¿½cil - entre 1 a 100");
+            System.out.println("*** Bem-vindo ao jogo da sorte. ***");
+            System.out.println("Qual nï¿½vel de dificuldade deseja jogar");
+            System.out.println("1 - Fï¿½cil - entre 1 a 30");
+            System.out.println("2 - Intermediï¿½rio - entre 1 a 60");
+            System.out.println("3 - Difï¿½cil - entre 1 a 100");
 
-int opcao = input.nextInt();
-//Variável para manipular o switch
+            int opcao = input.nextInt();
+//Variï¿½vel para manipular o switch
 
-        switch(opcao) {
-            case 1:
-                rangeMaximo= 30;
-                break;
-            case 2:
-                rangeMaximo= 60;
-            break;
-            case 3:
-                rangeMaximo = 100;
-                break;
-            default:
-                System.out.println("Opção inválida");
-        }
-//Switch com a manipulação das variáveis para os níveis de dificuldade
+            switch(opcao) {
+                case 1:
+                    rangeMaximo= 30;
+                    break;
+                case 2:
+                    rangeMaximo= 60;
+                    break;
+                case 3:
+                    rangeMaximo = 100;
+                    break;
+                default:
+                    System.out.println("Opï¿½ï¿½o invï¿½lida");
+            }
+//Switch com a manipulaï¿½ï¿½o das variï¿½veis para os nï¿½veis de dificuldade
 
-int numeroAleatorio =  random.nextInt(rangeMaximo-rangeMinimo)+1 ;
-/*Capturando na variável numeroAleatorio o nível de dificuldade para por
+            int numeroAleatorio =  random.nextInt(rangeMaximo-rangeMinimo)+1 ;
+            /*Capturando na variï¿½vel numeroAleatorio o nï¿½vel de dificuldade para por
 no random */
 
-    for(;;) {
-//Laço interno para o usuário jogar
+            for(;;) {
+//Laï¿½o interno para o usuï¿½rio jogar
 
-System.out.println("Digite um número para testar sua sorte");
-int uValor = input.nextInt();
-//Variável de entrada do usuário
-System.out.println(" Você digitou o valor: " + uValor);
+                System.out.println("Digite um nï¿½mero para testar sua sorte");
+                int uValor = input.nextInt();
+//Variï¿½vel de entrada do usuï¿½rio
+                System.out.println(" Vocï¿½ digitou o valor: " + uValor);
 
-    if(uValor == numeroAleatorio) {
-soma = soma+10;
-System.out.println("Parabéns, você acertou. O número correto era: " + numeroAleatorio);
-acertou.add(uValor);
-System.out.println("*** Os números que você acertou foram: " + acertou);
-System.out.println("*** Os números que você errou foi: " + errou);
-    break;
-}
-    if(uValor == numeroAleatorio-1 || uValor == numeroAleatorio+1) {
-System.out.println("Você está próximo do número");
-soma = 5;
-errou.add(uValor);
-}
-    else {
-System.out.println("Infelizmente você digitou um número muito longe");
-    break;
-}
-//Condicionais para validar as comparações
-}
-System.out.println("Você quer jogar de novo?");
-input.nextLine();
-String quer = input.nextLine();
-if (quer.equals("n") || quer.equals("não"))
-    break;
-//Função para terminar com o laço infinito
-}
-}
+                if(uValor == numeroAleatorio) {
+                    soma = soma+10;
+                    System.out.println("Parabï¿½ns, vocï¿½ acertou. O nï¿½mero correto era: " + numeroAleatorio);
+                    acertou.add(uValor);
+                    System.out.println("*** Os nï¿½meros que vocï¿½ acertou foram: " + acertou);
+                    System.out.println("*** Os nï¿½meros que vocï¿½ errou foi: " + errou);
+System.out.println("VocÃª fez de pontos: " + soma);
+                    break;
+                }
+                if(uValor == numeroAleatorio-1 || uValor == numeroAleatorio+1) {
+                    System.out.println("Vocï¿½ estï¿½ prï¿½ximo do nï¿½mero");
+                    soma = 5;
+                    errou.add(uValor);
+                }
+                else {
+                    System.out.println("Infelizmente vocï¿½ digitou um nï¿½mero muito longe");
+                    break;
+                }
+//Condicionais para validar as comparaï¿½ï¿½es
+            }
+            System.out.println("Vocï¿½ quer jogar de novo?");
+            input.nextLine();
+            String quer = input.nextLine();
+            if (quer.equals("n") || quer.equals("nï¿½o"))
+                break;
+//Funï¿½ï¿½o para terminar com o laï¿½o infinito
+        }
+    }
 }
